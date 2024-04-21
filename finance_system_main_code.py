@@ -34,7 +34,7 @@ class FinancialDataRetrievalSystem:
         response = requests.get(two_values_exchange_amount)
         data = response.json()
         currency_conversion = data['conversion_result']
-        print(f"For {amount}{base_currency} you get {currency_conversion:.2f} {target_currency}")
+        print(f"For {amount} {base_currency} you get {currency_conversion:.2f} {target_currency}")
 
     def get_company_info(self, company_symbol):
         # Retrieve additional information about a company (e.g., name, sector) using the share API
@@ -84,23 +84,29 @@ def main():
             base_curr = input("Enter the base currency: ")
             target_curr = input("Enter the target currency: ")
             financial_system.get_currency_exchange_rate(base_curr, target_curr)
+            print()  # Add empty line for spacing
         elif choice == '2':
             company_symb = input("Enter the company symbol: ")
             financial_system.get_company_share_price(company_symb)
+            print()  # Add empty line for spacing
         elif choice == '3':
             amount = float(input("Enter the amount: "))
             base_curr = input("Enter the base currency: ")
             target_curr = input("Enter the target currency: ")
             financial_system.get_currency_conversion(amount, base_curr, target_curr)
+            print()  # Add empty line for spacing
         elif choice == '4':
             financial_system.get_top_gainers()
+            print()  # Add empty line for spacing
         elif choice == '5':
             financial_system.get_top_losers()
+            print()  # Add empty line for spacing
         elif choice == '6':
             print("Exiting the Financial Data Retrieval System. Goodbye!")
             break
         else:
             print("Invalid choice. Please enter a number between 1 and 6.")
+        print()  # Add empty line for spacing
 
 
 if __name__ == "__main__":
