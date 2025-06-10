@@ -111,5 +111,5 @@ def main():
 
 if __name__ == "__main__":
     api_url_1 = 'https://v6.exchangerate-api.com/v6/'
-    api_key_1 = '09a87fcb0b161e33b183595f'
+    api_key_1 = '0'
     main()
